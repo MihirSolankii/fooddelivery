@@ -1,0 +1,86 @@
+.place-order {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  
+  .place-order-left,
+  .place-order-right {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .multi-fields {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .multi-fields input[type="text"],
+  .place-order-left input[type="email"] {
+    width: calc(50% - 5px);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .place-order-left input[type="text"] {    
+    width: calc(50% - 5px);
+    padding: 10px;
+    margin-bottom: 10px;    
+  }
+  
+  .place-order-left input[type="email"] {
+    width: 100%;
+  }
+  
+  .cart-total {
+    margin-top: 20px;
+  }
+  
+  .cart-total h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .cart-total-details p {
+    font-size: 16px;
+  }
+  
+  .place-order-right button {
+    background-color: tomato;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .place-order-right button:hover {
+    background-color: #ff6347;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
+  }
+  

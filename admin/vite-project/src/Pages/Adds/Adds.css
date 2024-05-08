@@ -1,0 +1,61 @@
+/* styles.css */
+
+/* Container styles */
+.add {
+    width: 100%; /* Full width */
+    max-width: 600px; /* Max width */
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  /* Form styles */
+  form {
+    display: flex; /* Display as flexbox */
+    flex-direction: column; /* Stack elements vertically */
+  }
+  
+  /* Input container styles */
+  .add-img-upload,
+  .add-product-name,
+  .add-product-description,
+  .add-category-price {
+    margin-bottom: 20px; /* Margin between sections */
+  }
+  
+  /* Label styles for file input */
+  label {
+    cursor: pointer; /* Show pointer cursor */
+  }
+  
+  /* Text input and textarea styles */
+  input[type='text'],
+  textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Border radius */
+  }
+  
+  /* Select dropdown styles */
+  select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Border radius */
+  }
+  
+  /* Button styles */
+  button[type='submit'] {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    background-color: tomato; /* Tomato color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Border radius */
+    cursor: pointer; /* Pointer cursor */
+  }
+  
+  /* Image styles */
+  img {
+    max-width: 100%; /* Ensure image does not exceed container width */
+  }
+  
