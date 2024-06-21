@@ -11,7 +11,7 @@ function Verify() {
     console.log(orderId);
     const verifyPayment = async () => {
         try {
-          const response = await axios.post("http://localhost:4000/api/order/verify",{sucess,orderId});
+          const response = await axios.post("https://food-del-backend-vvhe.onrender.com/api/order/verify",{sucess,orderId});
           console.log(response.data.success);
           console.log(response.data);
           if (response.data.success) {
