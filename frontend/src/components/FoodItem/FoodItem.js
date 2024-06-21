@@ -9,7 +9,7 @@ function FoodItem({id,name,price,description,image}) {
   return (
     <div className='fooditem'>
       <div className='fooditem-img-container'>
-      <img src={`http://localhost:4000/images/${image}`} className='food-item-img' alt='Food Item'/>
+      <img src={`https://food-del-backend-vvhe.onrender.com/images/${image}`} className='food-item-img' alt='Food Item'/>
         {!cartitem[id]
           ?<img className='add' onClick={()=>addtocart(id)} src={assets.add_icon_white}/>
           :<div className='food-item-counter'>
