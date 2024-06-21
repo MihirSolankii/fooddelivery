@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import './List.css'
 function List() {
   const [list, setList] = useState([]);
-  const url = "http://localhost:4000"; // Define the url variable
+  const url = "https://food-del-backend-vvhe.onrender.com"; // Define the url variable
 
   const fetchList = async () => {
     try {
@@ -27,7 +27,7 @@ function List() {
   }, []);
   const removefood=async(foodid)=>{
    console.log(foodid);
-   const response=await axios.post(`http://localhost:4000/api/food/remove`,{id:foodid});
+   const response=await axios.post(`https://food-del-backend-vvhe.onrender.com/api/food/remove`,{id:foodid});
     if(response.success){
       toast.success("food deleted sucessfully");
     }
@@ -53,7 +53,7 @@ function List() {
             list.map((item,index)=>{
               return(
                 <div className="list-table-format" key={index}>
-                  <img src={`http://localhost:4000/images/`+item.image} alt={item.name} />
+                  <img src={`https://food-del-backend-vvhe.onrender.com/images/`+item.image} alt={item.name} />
                   <p>{item.name}</p>
                   <p>{item.category}</p>
                   <p>${item.price}</p>
