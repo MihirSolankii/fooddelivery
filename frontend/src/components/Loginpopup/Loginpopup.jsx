@@ -23,9 +23,9 @@ function Loginpopup({ setshowlogin }) {
       event.preventDefault();
       var apiUrl=""
       if (state === "Login") {
-        apiUrl+= "http://localhost:4000/api/user/login";
+        apiUrl+= "https://food-del-backend-vvhe.onrender.com/api/user/login";
       } else {
-          apiUrl+= "http://localhost:4000/api/user/register";
+          apiUrl+= "https://food-del-backend-vvhe.onrender.com/api/user/register";
       }
 
       const response=await axios.post(apiUrl,data);
