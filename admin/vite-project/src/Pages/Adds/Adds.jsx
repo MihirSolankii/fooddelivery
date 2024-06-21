@@ -29,7 +29,7 @@ function Adds() {
     formData.append("image", image);
 
     try {
-        const response = await axios.post("http://localhost:4000/api/food/add", formData);
+        const response = await axios.post("https://food-del-backend-vvhe.onrender.com/api/food/add", formData);
         if (response.data && response.data.success) {
           // Reset form data and image state
           setData({
