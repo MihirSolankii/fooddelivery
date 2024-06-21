@@ -1,7 +1,13 @@
 .header{
     height: 34vw;
     margin:  30px auto;
-    background: url("D:/project1/frontend_assets/header_img.png") no-repeat;
+    background-size: contain;
+    position: relative;
+}
+.header>img{
+    height: 34vw;
+    margin:  30px auto;
+    /* background: url("/header_img.png") no-repeat; */
     background-size: contain;
     position: relative;
 }
