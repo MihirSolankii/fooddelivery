@@ -7,7 +7,7 @@ import 'dotenv/config'
 import cartRouter from './routes/cartroutes.js';
 import orderRouter from './routes/orderroutes.js';
 const app = express();
-const port = 4000;
+const port =  process.env.PORT|| 5000;
 
 app.use(express.json());
 app.use(cors());
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("server is running");
+  console.log("server is running on ",port);
 });
 //mongodb+srv://mihir:92201703191@cluster0.b0v4j8c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 

@@ -1,4 +1,4 @@
-import User from '../models/usermodel.js'
+import  User from  '../models/usermodel.js'
 
    export const addtocart=async(req,res)=>{
  try {
@@ -12,10 +12,10 @@ import User from '../models/usermodel.js'
             cartData[req.body.itemid]+=1
         }
         await User.findByIdAndUpdate(req.body.userId,{cartData});
-        res.json({sucess:true,message:"item added to cart"})
+      return  res.json({sucess:true,message:"item added to cart"})
  } catch (error) {
     console.log(error);
-    res.json({sucess:false,message:"item not added to cart"})
+    return  res.json({sucess:false,message:"item not added to cart"})
  }
 }
  export  const removecart= async (req,res)=>{
@@ -37,7 +37,9 @@ import User from '../models/usermodel.js'
    export const getcart=async (req,res)=>{
     try{
         let userData=await User.findById(req.body.userId)
+        console.log("userData is",userData);
     let cartData=await userData.cartData;
+    
     res.json({sucess:true,cartData})
     }
     catch(error){

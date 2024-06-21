@@ -1,3 +1,4 @@
+import { log } from "console";
 import Food from "../models/foodmodel.js";
 import fs from 'fs';
 
@@ -40,10 +41,12 @@ export const removefood =async(req,res)=>{
         }
       
         // Delete the associated image file
-        fs.unlinkSync(`./uploads/${food.image}`);
+        const abcd= fs.unlinkSync(`./uploads/${food.image}`);
+       console.log(abcd);
       
         // Delete the food item from the database
-        await Food.findByIdAndDelete(req.body.id);
+       const abc= await Food.findByIdAndDelete(req.body.id);
+console.log(abc);
         
         res.json({ success: true, message: "Food deleted" });
       } catch (error) {

@@ -37,21 +37,27 @@ const StoreContextProvider = (props) => {
   }
   return totalamount;
  }
- const fetchFoodlist=async()=>{
-  const response=await axios.get("http://localhost:4000/api/food/list");
-  setFoodlist(response.data.data);
 
- }
+
+  const fetchFoodlist=async()=>{
+    const response=await axios.get("http://localhost:4000/api/food/list");
+    setFoodlist(response.data.data);
+     console.log(response.data.data);
+  
+   }
+ 
+
  const loadcartdata=async(token)=>{
   const response=await axios.post("http://localhost:4000/api/cart/get",{},{headers:{token}});
+
   setcartitem(response.data.cartData);
  }
  useEffect(()=>{
  async function loaddata(){
-  await fetchFoodlist();;
+  await fetchFoodlist();
   if(localStorage.getItem("token")){
     settoken(localStorage.getItem("token"));
-    await loadcartdata(localStorage.getItem("token"))
+     await loadcartdata(localStorage.getItem("token"))
   }
  }
  loaddata();

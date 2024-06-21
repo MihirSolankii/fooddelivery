@@ -4,6 +4,7 @@ import { assets } from '../../assets/assets';
 import axios from 'axios';
 import { StoreContext } from '../../context/StoreContext';
 
+
 function Loginpopup({ setshowlogin }) {
     const { token, settoken } = useContext(StoreContext);
     const [state, setstate] = useState("Login");
@@ -20,38 +21,52 @@ function Loginpopup({ setshowlogin }) {
 
     const onLogin = async (event) => {
       event.preventDefault();
-      let apiUrl = "http://localhost:4000/";
+      var apiUrl=""
       if (state === "Login") {
-        apiUrl += "api/user/login";
+        apiUrl+= "http://localhost:4000/api/user/login";
       } else {
-        apiUrl += "api/user/register";
+          apiUrl+= "http://localhost:4000/api/user/register";
+      }
+
+      const response=await axios.post(apiUrl,data);
+      console.log(response);
+      console.log(response.data.success);
+      if(response.data.success){
+        settoken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        setshowlogin(false);
+        console.log(response);
+        
+      }
+      else{
+        alert(response.data.message);
       }
     
-      try {
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
+    //   try {
+    //     const response = await fetch(apiUrl, {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify(data),
+    //     });
+    //  console.log(response);
+    //     if (!response.ok) {
+    //       throw new Error('Network response was not ok.');
+    //     }
     
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
-        }
-    
-        const responseData = await response.json();
-        if (responseData.token) {
-          settoken(responseData.token);
-          localStorage.setItem("token", responseData.token);
-          setshowlogin(false);
-        } else {
-          alert(responseData.message);
-        }
-      } catch (error) {
-        alert(`Error: ${error.message}`);
-      }
-    };
+    //     const responseData = await response.json();
+    //     if (responseData.token) {
+    //       settoken(responseData.token);
+    //       localStorage.setItem("token", responseData.token);
+    //       setshowlogin(false);
+    //     } else {
+    //       alert(responseData.message);
+    //     }
+    //   } catch (error) {
+    //     alert(`Error: ${error.message}`);
+    //   }
+     };
     
 
     return (
