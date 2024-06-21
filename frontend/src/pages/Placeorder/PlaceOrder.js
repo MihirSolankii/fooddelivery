@@ -43,7 +43,7 @@ const PlaceOrder = () => {
       amount: getTotalcart() + 2
     };
 
-    let response = await axios.post("http://localhost:4000/api/order/place", orderData, { headers: { token } });
+    let response = await axios.post("https://food-del-backend-vvhe.onrender.com/api/order/place", orderData, { headers: { token } });
     if (response.status === 200) {
       const { session_url } = response.data;
       window.location.replace(session_url);
