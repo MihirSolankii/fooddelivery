@@ -40,7 +40,7 @@ const StoreContextProvider = (props) => {
 
 
   const fetchFoodlist=async()=>{
-    const response=await axios.get("http://localhost:4000/api/food/list");
+    const response=await axios.get("https://food-del-backend-vvhe.onrender.com/api/food/list");
     setFoodlist(response.data.data);
      console.log(response.data.data);
   
