@@ -10,7 +10,7 @@ const MyOrders = () => {
   
     const fetchOrders = async () => {
       try {
-        const response = await axios.post("http://localhost:4000/api/order/useorders", {}, { headers: { token } });
+        const response = await axios.post("https://food-del-backend-vvhe.onrender.com/api/order/useorders", {}, { headers: { token } });
         setData(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);
