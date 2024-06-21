@@ -38,8 +38,8 @@ export const placeOrder = async (req, res) => {
         const session = await stripe.checkout.sessions.create({
             line_items:line_items,
             mode: "payment",
-            success_url: `http://localhost:3000/verify?success=true&orderId=${newOrder._id}`,
-            cancel_url: `http://localhost:3000/verify?success=false&orderId=${newOrder._id}`
+            success_url: `https://fooddelivery-mern-front.onrender.com/verify?success=true&orderId=${newOrder._id}`,
+            cancel_url: `https://fooddelivery-mern-front.onrender.com/verify?success=false&orderId=${newOrder._id}`
         });
         res.json({ success: true, session_url: session.url });
     } catch (error) { 
