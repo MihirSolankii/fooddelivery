@@ -16,13 +16,13 @@ const StoreContextProvider = (props) => {
       setcartitem((prev)=>({...prev,[itemid]:prev[itemid]+1}))
     }
     if(token){
-      await axios.post("http://localhost:4000/api/cart/add",{itemid},{headers:{token}});
+      await axios.post("https://food-del-backend-vvhe.onrender.com/api/cart/add",{itemid},{headers:{token}});
     }
   }
   const removecart= async (itemid)=>{
     setcartitem((prev)=>({...prev,[itemid]:prev[itemid]-1}))
     if(token){
-      await axios.post("http://localhost:4000/api/cart/remove",{itemid},{headers:{token}});
+      await axios.post("https://food-del-backend-vvhe.onrender.com/api/cart/remove",{itemid},{headers:{token}});
     }
   }
  
@@ -48,7 +48,7 @@ const StoreContextProvider = (props) => {
  
 
  const loadcartdata=async(token)=>{
-  const response=await axios.post("http://localhost:4000/api/cart/get",{},{headers:{token}});
+  const response=await axios.post("https://food-del-backend-vvhe.onrender.com/api/cart/get",{},{headers:{token}});
 
   setcartitem(response.data.cartData);
  }
